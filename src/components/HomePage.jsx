@@ -8,7 +8,7 @@ import {CryptoCurrencies, News} from '../components'
 const {Title} = Typography 
 
 const HomePage = () => {  
-  const {data, isFetching } = useGetCryptosQuery()
+  const {data, isFetching } = useGetCryptosQuery(10)
   const globalStats = data?.data?.stats
   if(isFetching) return 'loading ..'
 
@@ -29,7 +29,7 @@ const HomePage = () => {
         <Title level={3} className="show-more"><Link to = "/cryptocurrencies">Xem  tất cả</Link>
         </Title>
       </div>
-      <CryptoCurrencies simplified/>
+      <CryptoCurrencies simplified = {true}/>
 
       <div className='home-heading-container'>
         <Title level={2} className="home-title">Tin mới nhất về tiền điện tử</Title>
