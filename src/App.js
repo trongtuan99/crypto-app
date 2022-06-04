@@ -23,10 +23,17 @@ function App() {
                 </Routes>
               </div>
           </Layout>
+        <div className="footer" >
+            <Typography.Title level={5} style={{ color:'white', textAlign:'center' }}>
+              Crypto App <br />
+            </Typography.Title>
+            <Space>
+              <Link to='/'>home</Link>
+              <Link to='/exchanges'>Exchanges</Link>
+              <Link to='/news'>News</Link>
+            </Space>
         </div>
-        <div className="footer">
-          
-          </div>
+        </div>
 
       </div>
   )
