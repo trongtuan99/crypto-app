@@ -25,12 +25,12 @@ function App() {
           </Layout>
         <div className="footer" >
             <Typography.Title level={5} style={{ color:'white', textAlign:'center' }}>
-              Crypto App <br />
+              Crypto Life <br />
             </Typography.Title>
             <Space>
-              <Link to='/'>home</Link>
-              <Link to='/exchanges'>Exchanges</Link>
-              <Link to='/news'>News</Link>
+              <Link to='/'>Trang chủ</Link>
+              <Link to='/exchanges'>Giao dịch</Link>
+              <Link to='/news'>Tin tức</Link>
             </Space>
         </div>
         </div>
