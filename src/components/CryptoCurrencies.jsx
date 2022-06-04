@@ -11,7 +11,8 @@ const CryptoCurrencies = ({simplified}) => {
   const {data: cryptosList, isFetching} = useGetCryptosQuery(count)
   const [cryptos,setCryptos] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
-  console.log(cryptos);
+
+  console.log(cryptosList);
 
   useEffect(()=>{
     const fillterData = cryptosList?.data?.coins.filter((coin)=>coin.name.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -20,15 +21,17 @@ const CryptoCurrencies = ({simplified}) => {
 
   },[cryptosList, searchTerm])
 
-  if(isFetching) return 'loading'
+  if(isFetching) return 'loading...'
 
   return (
     <>
       {!simplified && (
+        <>
+        <Title level={2} className="curency-title">Top 100 loại Crypto hiện nay</Title>
         <div className='search-crypto'>
-          <Title level={2} className="curency-title">Tất cả tiền điện tử</Title>
-          <Input placeholder='Tìm kiếm tiền điện tử ...' onChange={(e)=> setSearchTerm(e.target.value)}/>
+          <Input placeholder='Tìm kiếm Crypto...' onChange={(e)=> setSearchTerm(e.target.value)}/>
         </div>
+        </>
       )}
       <Row gutter={[32,32]} className="crypto-card-container">
         {cryptos?.map((currency)=>(
@@ -40,9 +43,9 @@ const CryptoCurrencies = ({simplified}) => {
                 hoverable
               >
                 <p>Giá hiện tại: {millify(currency.price)} $</p>
-                <p>Tên ngắn gọn: {currency.symbol}</p>
+                <p>Ký hiệu: {currency.symbol}</p>
                 <p>Tổng vốn hoá: {millify(currency.marketCap)}</p>
-                <p>Thay đổi trong 24h: {millify(currency.change)} %</p>
+                <p>Biến động trong 24h: {millify(currency.change)} %</p>
               </Card>
             </Link>
           </Col>

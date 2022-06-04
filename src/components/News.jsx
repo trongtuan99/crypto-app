@@ -8,7 +8,7 @@ const { Option } = Select
 const demoImage = 'https://hanoispiritofplace.com/wp-content/uploads/2017/12/hinh-anh-bitcoin-1.jpg'
 const News = ({simplified}) => {
   const {data: cryptoNews } = useGetCryptoNewsQuery({newsCategory: 'Cryptocurrency', count: simplified ? 6 : 18})
-  console.log(cryptoNews);
+  // console.log(cryptoNews);
 
   if(!cryptoNews?.value) return 'loading ...'
   return (
