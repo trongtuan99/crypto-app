@@ -6,7 +6,7 @@ import { Row, Col, Typography, Select } from 'antd'
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
 import { useGetCryptoDetailsQuery } from '../services/cryptoApi'
-
+import Loader from './Loader'
 const {Title, Text} = Typography
 const { Option } = Select
 
@@ -36,7 +36,7 @@ const CryptoDetails = () => {
 
   console.log(data);
 
-  if(isFetching) return 'loading ...'
+  if(isFetching) return <Loader/>
   return (
       <Col className='coin-detail-container'>
           <Col className='coin-heading-container'>

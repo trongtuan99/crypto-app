@@ -4,6 +4,7 @@ import moment from 'moment'
 
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi'
 import { useGetCryptosQuery } from '../services/cryptoApi'
+import Loader from './Loader'
 
 const { Text, Title } = Typography
 const { Option } = Select
@@ -11,13 +12,15 @@ const { Option } = Select
 const demoImage = 'https://hanoispiritofplace.com/wp-content/uploads/2017/12/hinh-anh-bitcoin-1.jpg'
 
 const News = ({simplified}) => {
+
   const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
-  const {data: cryptoNews } = useGetCryptoNewsQuery({newsCategory, count: simplified ? 6 : 18})
+  const {data: cryptoNews, isFetching } = useGetCryptoNewsQuery({newsCategory, count: simplified ? 6 : 18})
   const {data} = useGetCryptosQuery(100)
 
   console.log(cryptoNews);
 
-  if(!cryptoNews?.value) return 'loading ...'
+  if(isFetching) return <Loader/>
+
   return (
     <Row gutter={[24,24]}>
     {!simplified && (
