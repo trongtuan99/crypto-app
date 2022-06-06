@@ -29,7 +29,7 @@ function App() {
             </Typography.Title>
             <Space>
               <Link to='/'>Trang chủ</Link>
-              <Link to='/exchanges'>Giao dịch</Link>
+              <Link to='/cryptocurrencies'>Tất cả Crypto</Link>
               <Link to='/news'>Tin tức</Link>
             </Space>
         </div>

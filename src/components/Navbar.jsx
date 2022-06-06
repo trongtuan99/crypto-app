@@ -43,9 +43,9 @@ const Navbar = () => {
           <Menu.Item icon={<FundOutlined/>}>
             <Link to='/cryptocurrencies'>Tất cả Crypto</Link>
           </Menu.Item>
-          <Menu.Item icon={<MoneyCollectOutlined/>}>
+          {/* <Menu.Item icon={<MoneyCollectOutlined/>}>
             <Link to='/exchanges'>Giao Dịch Crypto</Link>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item icon={<BulbOutlined/>}>
             <Link to='/news'>Tin Tức</Link>
           </Menu.Item>
