@@ -28,29 +28,29 @@ const Navbar = () => {
     <div className='nav-container'>
       <div className='logo-container'>
         <Avatar src={icon} size='large'/>
-          <Typography.Title level={2} className='logo'>
-            <Link to='/'>Crypto Life</Link>
-          </Typography.Title>
-          <Button className='menu-control-container' onClick={()=>setActiveMenu(!activeMenu)}>
-            <MenuOutlined/>
-          </Button>
-          {activeMenu && (
-            <Menu className='menu-list' theme='dark'>
-              <Menu.Item icon={<HomeOutlined/>}>
-                <Link to='/'>Trang Chủ</Link>
-              </Menu.Item>
-              <Menu.Item icon={<FundOutlined/>}>
-                <Link to='/cryptocurrencies'>Tất cả Crypto</Link>
-              </Menu.Item>
-              <Menu.Item icon={<MoneyCollectOutlined/>}>
-                <Link to='/exchanges'>Giao Dịch Crypto</Link>
-              </Menu.Item>
-              <Menu.Item icon={<BulbOutlined/>}>
-                <Link to='/news'>Tin Tức</Link>
-              </Menu.Item>
-            </Menu>
-          )}
+        <Typography.Title level={2} className='logo'>
+          <Link to='/'>Crypto Life</Link>
+        </Typography.Title>
       </div>
+      <Button className='menu-control-container' onClick={()=>setActiveMenu(!activeMenu)}>
+            <MenuOutlined/>
+      </Button>
+      {activeMenu && (
+        <Menu className='menu-list' theme='dark'>
+          <Menu.Item icon={<HomeOutlined/>}>
+            <Link to='/'>Trang Chủ</Link>
+          </Menu.Item>
+          <Menu.Item icon={<FundOutlined/>}>
+            <Link to='/cryptocurrencies'>Tất cả Crypto</Link>
+          </Menu.Item>
+          <Menu.Item icon={<MoneyCollectOutlined/>}>
+            <Link to='/exchanges'>Giao Dịch Crypto</Link>
+          </Menu.Item>
+          <Menu.Item icon={<BulbOutlined/>}>
+            <Link to='/news'>Tin Tức</Link>
+          </Menu.Item>
+        </Menu>
+      )}
     </div>
   )
 }
